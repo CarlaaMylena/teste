@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Filmes</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'listar_filmes' %}">Início</a></li>
+                <li><a href="{% url 'criar_filme' %}">Adicionar Filme</a></li>
+                <li><a href="{% url 'buscar_filme_omdb' %}">Buscar Filme OMDb</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>

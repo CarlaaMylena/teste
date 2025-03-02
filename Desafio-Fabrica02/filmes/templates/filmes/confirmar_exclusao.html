@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir</title>
+</head>
+<body>
+    {% extends 'filmes/base.html' %}
+
+{% block title %}Excluir Filme{% endblock %}
+
+{% block content %}
+    <h2>Tem certeza que deseja excluir "{{ filme.titulo }}"?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sim, excluir</button>
+    </form>
+    <a href="{% url 'listar_filmes' %}">Cancelar</a>
+{% endblock %}
+</body>
+</html>

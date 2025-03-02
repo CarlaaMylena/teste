@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Filme</title>
+</head>
+<body>
+{% extends 'filmes/base.html' %}
+
+{% block title %}Adicionar/Editar Filme{% endblock %}
+    
+{% block content %}
+    <h2>{% if form.instance.pk %}Editar{% else %}Adicionar{% endif %} Filme</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'listar_filmes' %}">Voltar</a>
+{% endblock %}
+</body>
+</html>
